@@ -6,12 +6,16 @@ import { UserModel } from './entity/user.entity';
 import { StudentModel, TeacherModel } from './entity/person.entity';
 import { AirplaneModel, BaseModel, BookModel, CarModel, ComputerModel, SignleBaseModel } from './entity/inheritance.entity';
 import { ProfileModel } from './entity/profile.entity';
+import { PostModel } from './entity/post.entity';
+import { TagModel } from './entity/\btag.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([
       UserModel,
       ProfileModel,
+      PostModel,
+      TagModel,
     ]),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -30,6 +34,8 @@ import { ProfileModel } from './entity/profile.entity';
         ComputerModel,
         AirplaneModel,
         ProfileModel,
+        PostModel,
+        TagModel,
       ],
       synchronize: true,
     }),
